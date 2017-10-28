@@ -10,12 +10,36 @@
 \usepackage[utf8]{inputenc}
 
 \usepackage{url,enumerate}
-\usepackage{algpseudocode, algorithm, mathtools, listings}
+%\usepackage{algpseudocode, algorithm, mathtools, listings}
 \usepackage{booktabs,siunitx}
 \usepackage[top=2.7cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
-\usepackage[usenames,dvipsnames]{xcolor}
+%\usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{indentfirst}
 \usepackage{fancyhdr}
+\usepackage[labelfont={bf,small},textfont=small]{caption}
+
+
+%% Algorithm2e package settings
+\usepackage[ruled,noline,noend]{algorithm2e}
+\SetAlgorithmName{Algorytm}{algorytm}{Lista algorytmów}
+
+%% References settings
+\usepackage{hyperref}
+
+
+\usepackage[capitalise, noabbrev]{cleveref}
+\crefname{algorithm}{algorytm}{algorytmy}
+\Crefname{algorithm}{Algorytm}{Algorytmy}
+\crefname{table}{tabela}{tabele}
+\Crefname{table}{Tabela}{Tabele}
+\crefname{equation}{równanie}{równania}
+\Crefname{equation}{Równanie}{Równania}
+
+
+
+
+
+%% Titlepage settings
 
 \makeatletter
 
@@ -29,30 +53,17 @@
 \def\@major{\ClassError{mk-polish-lab-report}{No \noexpand\major given}{}}
 \def\topic#1{\gdef\@topic{#1}}
 \def\@topic{\ClassError{mk-polish-lab-report}{No \noexpand\topic given}{}}
-%\def\coursename#1{\gdef\@coursename{#1}}
-%\def\@coursename{\ClassError{mk-polish-lab-report}{No \noexpand\coursename given}{}}
-%\def\courseyear#1{\gdef\@courseyear{#1}}
-%\def\@courseyear{\ClassError{mk-polish-lab-report}{No \noexpand\courseyear given}{}}
 \def\coursegroup#1{\gdef\@coursegroup{#1}}
 \def\@coursegroup{\ClassError{mk-polish-lab-report}{No \noexpand\coursegroup given}{}}
 \def\tutor#1{\gdef\@tutor{#1}}
 \def\@tutor{\ClassError{mk-polish-lab-report}{No \noexpand\tutor given}{}}
 
-\newcommand\studentinfo[3][]{#2&#3&\texttt{#1}}
+
+
 
 \newcommand\studentnumbername{numer albumu}
 \newcommand\tutorname{prowadzący}
 \newcommand\coursegroupname{grupa}
-
-\newcommand\@typesetauthors{%
-    {\normalsize
-      \begin{tabular}[t]{lrl}%
-        \large\strut\ignorespaces\@author
-      \end{tabular}\par}%
-}
-\renewcommand{\and}{\\ \large\strut}
-
-\newcommand\@typesettitle{{\LARGE \@title \par}}
 
 \renewcommand{\maketitle}
 {\thispagestyle{empty}\null\noindent{\large\textbf{\@author}}\hfill\ \@date \\
@@ -84,9 +95,6 @@
   \fancyhead[L]{\@university}% Your journal/note
   \fancyhead[R]{\@major}% Your logo/image
 }
-
-
-
 \makeatother
 
 

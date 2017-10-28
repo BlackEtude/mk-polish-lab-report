@@ -1,6 +1,7 @@
 \documentclass[11pt]{mk-polish-lab-report}
 
 \usepackage{lipsum}
+%\usepackage[light, math]{anttor}
 
 \university{Politechnika Wrocławska}
 \major{Informatyka, inż. I st.}
@@ -9,13 +10,12 @@
 
 \author{Genowefa Bolesna-Mordęga}
 \studentnumber{12345}
-\title{Obliczenia Naukowe}
+\title{Bardzo Ważny Kurs}
 \topic{Lista 1}
 
 
-%% 
-\geometry{top=2.5cm,bottom=2cm,left=2.5cm,right=2.5cm}
-
+%% Uncomment to change margins size
+%\geometry{top=2.5cm,bottom=2cm,left=2.5cm,right=2.5cm}
 
 
 \begin{document}
@@ -23,6 +23,23 @@
 \maketitle
 
 \section{Rozpoznanie arytmetyki}
+
+Iteracyjny sposób wyznaczenia najmniejszej liczby $\mathtt{eta} > 0$ przedstawia \Cref{alg:macheps}. Polega on na dzieleniu w pętli wartości zmiennej \texttt{eta} (zainicjalizowanej jedynką) przez dwa, tak długo, aż zostanie ona potraktowana jak zero (tzn. $\mathtt{eta} = 0.0$).
+
+\begin{algorithm}[h]
+\caption{Wyznaczanie epsilonów maszynowych.}
+\label{alg:macheps}
+\SetKwData{Macheps}{macheps}\SetKwData{NMacheps}{new\_{}macheps}
+
+\Macheps $\leftarrow 1.0$\;
+\NMacheps $\leftarrow 1.0$\;
+\While {$1.0 + \NMacheps > 1.0$}{
+$\Macheps\leftarrow \NMacheps$\;
+$\NMacheps \leftarrow \NMacheps / 2.0$\;
+}
+\Return \Macheps
+\end{algorithm}
+
 \lipsum[1-2]
 
 	\begin{table}[!h]
