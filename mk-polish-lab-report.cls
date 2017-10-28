@@ -21,20 +21,20 @@
 
 %% Algorithm2e package settings
 \usepackage[ruled,noline,noend]{algorithm2e}
-\SetAlgorithmName{Algorytm}{algorytm}{Lista algorytmów}
+\SetAlgorithmName{Algorytm}{algorytm}{Algorytmy}
 
 %% References settings
+
 \usepackage{hyperref}
-
-
-\usepackage[capitalise, noabbrev]{cleveref}
+\usepackage[capitalise, noabbrev, nameinlink]{cleveref}
 \crefname{algorithm}{algorytm}{algorytmy}
 \Crefname{algorithm}{Algorytm}{Algorytmy}
-\crefname{table}{tabela}{tabele}
-\Crefname{table}{Tabela}{Tabele}
+\crefname{table}{\tablename}{tabele}
+\Crefname{table}{\tablename}{Tabele}
 \crefname{equation}{równanie}{równania}
 \Crefname{equation}{Równanie}{Równania}
-
+\crefname{figure}{rysunek}{rysunki}
+\Crefname{figure}{Rysunek}{Rysunki}
 
 
 

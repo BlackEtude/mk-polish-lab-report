@@ -7,6 +7,7 @@
 - [`listings`](https://ctan.org/pkg/listings) — code listings
 - [`algorithm2e`](https://www.ctan.org/pkg/algorithm2e) — pseudocode
 - [`hyperref`](https://ctan.org/pkg/hyperref) — hyperlinks
+- [`cleveref`](https://ctan.org/pkg/cleveref) — smart references to floating environments
 - [`caption`](https://www.ctan.org/pkg/caption) — customising captions in floating environments ([tutorial](http://www.peteryu.ca/tutorials/publishing/latex_captions))
 
 
