@@ -1,0 +1,83 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{mk-polish-lab-report}[2017/10/28 University lab report in polish v0.1]
+
+% This passes options to the article class 
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
+\ProcessOptions\relax
+\LoadClass[a4paper]{article}
+
+\usepackage[MeX]{polski}
+\usepackage[utf8]{inputenc}
+
+\usepackage{url, enumerate}
+\usepackage{algpseudocode, algorithm, mathtools, listings}
+\usepackage{booktabs,`}
+\usepackage{geometry}
+\geometry{top=2.7cm,bottom=2.5cm,left=2.5cm,right=2.5cm}
+
+
+
+\usepackage[usenames,dvipsnames]{xcolor}
+
+
+\makeatletter
+
+\def\studycycle#1{\gdef\@studycycle{#1}}
+\def\@studycycle{\ClassError{mk-polish-lab-report}{No \noexpand\studycycle given}{}}
+\def\coursesemester#1{\gdef\@coursesemester{#1}}
+\def\@coursesemester{\ClassError{mk-polish-lab-report}{No \noexpand\coursesemester given}{}}
+\def\coursename#1{\gdef\@coursename{#1}}
+\def\@coursename{\ClassError{mk-polish-lab-report}{No \noexpand\coursename given}{}}
+\def\courseyear#1{\gdef\@courseyear{#1}}
+\def\@courseyear{\ClassError{mk-polish-lab-report}{No \noexpand\courseyear given}{}}
+\def\coursegroup#1{\gdef\@coursegroup{#1}}
+\def\@coursegroup{\ClassError{mk-polish-lab-report}{No \noexpand\coursegroup given}{}}
+\def\courseteacher#1{\gdef\@courseteacher{#1}}
+\def\@courseteacher{\ClassError{mk-polish-lab-report}{No \noexpand\courseteacher given}{}}
+
+\newcommand\studentinfo[3][]{#2&#3&\texttt{#1}}
+
+\newcommand\coursesemestername{semestr}
+\newcommand\courseteachername{prowadzący}
+
+\newcommand\@typesetauthors{%
+    {\normalsize
+      \begin{tabular}[t]{lrl}%
+        \large\strut\ignorespaces\@author
+      \end{tabular}\par}%
+}
+\renewcommand{\and}{\\ \large\strut}
+
+\newcommand\@typesettitle{{\LARGE \@title \par}}
+
+\renewcommand{\@maketitle}{%
+  \newpage
+  \null
+  \noindent\strut\@studycycle\hfill\coursesemestername\ \@coursesemester
+  \hrule{\hspace{\textwidth}}\\
+  {\large\noindent\textbf{\@coursename\hfill\@courseyear}}\\
+  \noindent\strut\courseteachername: \@courseteacher \hfill\@coursegroup
+  \hrule{\hspace{\textwidth}}\\
+  \vskip \baselineskip
+  \vskip 6\baselineskip
+  \begin{center}%
+%  \let \footnote \thanks
+%    \large
+%    \if@authorfirst\else
+%      \@typesettitle%
+%    \vskip \baselineskip \fi
+%    \@typesetauthors
+%    \if@authorfirst
+%      \vskip \baselineskip
+%    \@typesettitle\fi
+dupa
+  \end{center}%
+  \par
+  \vskip 1\baselineskip
+  }
+
+
+\makeatother
+
+
+

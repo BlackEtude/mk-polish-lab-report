@@ -1,0 +1,52 @@
+\documentclass[11pt]{mk-polish-lab-report}
+
+\usepackage{lipsum}
+
+\university{Politechnika Wrocławska}
+\major{Informatyka, inż. I st.}
+\tutor{dr hab. Paweł Zieliński}
+\coursegroup{czwartek TN, 11:15}
+
+\author{Genowefa Bolesna-Mordęga}
+\studentnumber{12345}
+\title{Obliczenia Naukowe}
+\topic{Lista 1}
+
+
+%% 
+\geometry{top=2.5cm,bottom=2cm,left=2.5cm,right=2.5cm}
+
+
+
+\begin{document}
+
+\maketitle
+
+\section{Rozpoznanie arytmetyki}
+\lipsum[1-2]
+
+	\begin{table}[!h]
+        \centering
+        \footnotesize
+        \sisetup{
+        table-number-alignment = right,
+		table-figures-integer  = 10,
+		table-figures-decimal = 16,
+		table-figures-exponent=2
+		}
+		\begin{tabular}{lSS}
+		\toprule
+			{podpunkt} & {\texttt{Float32}} & {\texttt{Float64}} \\ \midrule
+			$a$ & -111110.4999443 & 1.0251881368296672e-10 \\ 
+ 			$b$ & -0.4543457 & -1.5643308870494366e-10 \\
+ 			$c$ & -0.5 & 0.0e0 \\
+ 			$d$ & -0.5 & 0.0e0 \\\bottomrule
+ 		\end{tabular}
+ 		\caption{Obliczanie iloczynu skalarnego wektorów}
+		\label{table:8}
+	\end{table}	
+
+
+\lipsum[3-5]
+
+\end{document}
