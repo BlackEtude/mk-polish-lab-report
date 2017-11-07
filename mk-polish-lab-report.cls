@@ -6,10 +6,11 @@
 \ProcessOptions\relax
 \LoadClass[a4paper]{article}
 
+%% Language settings
 \usepackage[MeX]{polski}
 \usepackage[utf8]{inputenc}
 
-\usepackage{url,enumerate}
+\usepackage{enumerate}
 %\usepackage{algpseudocode, algorithm, mathtools, listings}
 \usepackage{booktabs,siunitx}
 \usepackage[top=2.7cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
@@ -17,14 +18,21 @@
 \usepackage{indentfirst}
 \usepackage{fancyhdr}
 \usepackage[labelfont={bf,small},textfont=small]{caption}
+\usepackage[shortlabels]{enumitem}
 
+\usepackage{amsmath, amssymb} % math symbols
+\usepackage{multicol}
+
+\setlist[enumerate]{itemsep=0pt}
+\setlist[itemize]{itemsep=0pt}
+\setlist[description]{itemsep=0pt}
 
 %% Algorithm2e package settings
 \usepackage[ruled,noline,noend]{algorithm2e}
 \SetAlgorithmName{Algorytm}{algorytm}{Algorytmy}
 
 %% References settings
-
+\usepackage{url}
 \usepackage{hyperref}
 \usepackage[capitalise, noabbrev, nameinlink]{cleveref}
 \crefname{algorithm}{algorytm}{algorytmy}
@@ -57,8 +65,6 @@
 \def\@coursegroup{\ClassError{mk-polish-lab-report}{No \noexpand\coursegroup given}{}}
 \def\tutor#1{\gdef\@tutor{#1}}
 \def\@tutor{\ClassError{mk-polish-lab-report}{No \noexpand\tutor given}{}}
-
-
 
 
 \newcommand\studentnumbername{numer albumu}
@@ -96,6 +102,4 @@
   \fancyhead[R]{\@major}% Your logo/image
 }
 \makeatother
-
-
 
