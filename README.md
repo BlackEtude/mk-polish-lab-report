@@ -1,5 +1,7 @@
 #  A `LaTeX` class for university lab reports in 🇵🇱
 
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
 *Disclaimer*: This is my first attempt to create my own `LaTeX` class, so please don't be too hard on me 😇
 
 ### Packages used
