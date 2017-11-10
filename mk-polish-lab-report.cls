@@ -1,17 +1,25 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{mk-polish-lab-report}[2017/10/28 University lab report in polish dev version]
-
+\LoadClass[a4paper]{article}
+\RequirePackage{titlesec}
+	
 % This passes options to the article class 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
+
+%% 
+\DeclareOption{zadania}{%
+	\titleformat{\section}%
+	{\normalfont\Large\bfseries}{Zadanie~\thesection}{1em}{}%
+}
 \ProcessOptions\relax
-\LoadClass[a4paper]{article}
+
 
 \usepackage[MeX]{polski}
 \usepackage[utf8]{inputenc}
 
 \usepackage{url,enumerate}
 %\usepackage{algpseudocode, algorithm, mathtools, listings}
-
+\usepackage{graphicx}
 
 %% Units, tables and numbers options
 \usepackage{booktabs,siunitx}
@@ -39,6 +47,7 @@
 
 %% Captions settings
 \usepackage[labelfont={bf,small},textfont=small]{caption}
+\usepackage{subcaption}
 
 %% Algorithm2e package settings
 \usepackage[ruled,noline,noend]{algorithm2e}
@@ -55,6 +64,7 @@
 \Crefname{equation}{Równanie}{Równania}
 \crefname{figure}{rysunek}{rysunki}
 \Crefname{figure}{Rysunek}{Rysunki}
+
 
 
 

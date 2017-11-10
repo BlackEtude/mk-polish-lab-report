@@ -4,6 +4,13 @@
 
 **Warning**: this project is still under heavy development. Use at your own risk. 🚧
 
+### Options
+This class inherits from the standard `article` class, so any `article` options may be used.
+
+Currently there is only one custom option for this package, `zadania`, which
+changes sections formatting from standard: ![Standard sectioning](https://github.com/makacz/mk-polish-lab-report/blob/master/screenshots/sec-std.png?raw=true)    to    ![Custom sectioning](https://github.com/makacz/mk-polish-lab-report/blob/master/screenshots/sec-zadanie.png?raw=true).
+
+
 ### Packages used
 - [`siunitx`](https://ctan.org/pkg/siunitx) — parsing numbers and SI units; tables aligned to number separators
 - [`listings`](https://ctan.org/pkg/listings) — code listings
