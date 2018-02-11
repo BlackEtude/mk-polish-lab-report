@@ -1,4 +1,4 @@
-\documentclass[11pt]{mk-polish-lab-report}
+\documentclass[zadania, 12pt, oneside]{mk-polish-lab-report}
 
 \usepackage{lipsum}
 %\usepackage[light, math]{anttor}
@@ -6,7 +6,7 @@
 \university{Politechnika Wrocławska}
 \major{Informatyka, inż. I st.}
 \tutor{dr hab. Paweł Zieliński}
-\coursegroup{czwartek TN, 11:15}
+%\coursegroup{czwartek TN, 11:15}
 
 \author{Genowefa Bolesna-Mordęga}
 \studentnumber{12345}
@@ -71,5 +71,23 @@ $\NMacheps \leftarrow \NMacheps / 2.0$\;
 
 
 \lipsum[3-5]
+\newpage
+
+\lipsum[3-5]
+
+\begin{lstlisting}[caption=podpis, label=code:example]
+function macheps(T::Type{})
+    new_macheps = T(1.0)
+    macheps = T(1.0)
+
+    while T(1.0) + new_macheps > T(1.0)
+        macheps = new_macheps
+        new_macheps /= T(2.0)
+    end
+    macheps
+end
+\end{lstlisting}
+
+\Cref{code:example}
 
 \end{document}

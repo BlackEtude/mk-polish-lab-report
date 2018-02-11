@@ -4,6 +4,14 @@
 
 **Warning**: this project is still under heavy development. Use at your own risk. 🚧
 
+
+## Known issues
+Since I've added my own option to this class, passing arguments to parent `article` class stopped working. The most painful symptom is that you cannot change document's font size.
+
+**Ugly workaround**: add parameters directly to the class, i.e. change line 3 of `mk-polish-lab-report.cls` file, for example:
+
+``\LoadClass[a4paper, 12pt, twoside]{article}``
+
 ### Options
 This class inherits from the standard `article` class, so any `article` options may be used.
 
@@ -19,6 +27,7 @@ changes sections formatting from standard: ![Standard sectioning](https://github
 - [`cleveref`](https://ctan.org/pkg/cleveref) — smart references to floating environments
 - [`caption`](https://www.ctan.org/pkg/caption) — customising captions in floating environments ([tutorial](http://www.peteryu.ca/tutorials/publishing/latex_captions))
 - [`subcaption`](https://ctan.org/pkg/subcaption)
+- [`amsthm`](https://ctan.org/pkg/amsthm) — definitions, theorems, proofs
 
 
 ### Customising look'n'feel
