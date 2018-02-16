@@ -7,23 +7,37 @@
 \RequirePackage{ifthen}
 \newboolean{Zadanie@Section}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% Class options %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %% This passes options to the article class 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
+
 %% Custom class option 
 \DeclareOption{zadania}{\setboolean{Zadanie@Section}{true}}
 \ProcessOptions\relax
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% Parent class %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \LoadClass[a4paper]{article}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% Basic language settings %%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage[MeX]{polski}
 \usepackage[utf8]{inputenc}
 \usepackage{indentfirst}
 \frenchspacing
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[top=2.7cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
 \usepackage{url,enumerate}
 \usepackage{graphicx}
-
+\usepackage{multicol}
+\usepackage[all]{nowidow}
+\usepackage{footnote}
 
 %% Units, tables and numbers options
 \usepackage{booktabs,siunitx}
@@ -32,21 +46,14 @@
 	%output-decimal-marker = {,} %%uncomment to change decimal separator to ","
 }
 
-
-\usepackage[top=2.7cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
 %\usepackage[usenames,dvipsnames]{xcolor}
-
-
-\usepackage{footnote}
 
 \usepackage{mathrsfs}
 \usepackage{bbold}
 \usepackage{mathtools}
-
-\usepackage{amsmath, amssymb} % math symbols
-\usepackage{multicol}
-\usepackage[all]{nowidow}
-
+\usepackage{amsmath, amssymb}
+\usepackage{bm}
+\usepackage{empheq}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%% Captions settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -161,6 +168,14 @@
 \crefname{section}{sekcja}{sekcje}
 \Crefname{section}{Sekcja}{Sekcje}
 }
+
+\crefrangelabelformat{figure}{#3#1#4--#5#2#6}
+\crefrangelabelformat{algorithm}{#3#1#4--#5#2#6}
+\crefrangelabelformat{listing}{#3#1#4--#5#2#6}
+\crefrangelabelformat{table}{#3#1#4--#5#2#6}
+\crefrangelabelformat{equation}{#3#1#4--#5#2#6}
+\crefrangelabelformat{section}{#3#1#4--#5#2#6}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -180,11 +195,10 @@
 \newtheorem*{definition*}{Definicja}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%% Title page formatting %%%%%%%%%%%%%%%%%%%%%%%%
-
 
 \makeatletter
 
@@ -219,13 +233,16 @@
 \vskip 1\baselineskip
 }
 
+\makeatother
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%% Headers & Footers formatting %%%%%%%%%%%%%%%%%
 
 \usepackage{fancyhdr}
+
+\makeatletter
 
 \pagestyle{fancy}
 \if@twoside
